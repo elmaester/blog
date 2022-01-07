@@ -1,0 +1,30 @@
+{
+  "name": "oleg.date-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Oleg.Date Blog",
+  "author": "elmaester",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^4.4.0",
+    "gatsby-plugin-manifest": "^4.4.0",
+    "gatsby-plugin-react-helmet": "^5.4.0",
+    "gatsby-plugin-sass": "^5.4.0",
+    "gatsby-plugin-sitemap": "^5.4.0",
+    "gatsby-source-filesystem": "^4.4.0",
+    "gatsby-transformer-remark": "^5.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.46.0"
+  }
+}
