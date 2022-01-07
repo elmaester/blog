@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://blog.oleg.date",
     title: "Oleg.Date Blog",
   },
   plugins: [
@@ -17,10 +17,10 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "markdown-pages",
+        path: "./src/markdown-pages/",
       },
-      __key: "pages",
+      __key: "markdown-pages",
     },
   ],
 };

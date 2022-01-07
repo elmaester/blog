@@ -1,0 +1,13 @@
+time {
+  font-style: italic;
+}
+
+.blog-post {
+  &-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  &-title {
+    margin-left: -3%;
+  }
+}
