@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Literata';
+    src: url('../fonts/literata.woff2') format('woff2'),
+         url('../fonts/literata.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/nunito.woff2') format('woff2'),
+       url('../fonts/nunito.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

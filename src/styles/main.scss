@@ -1,0 +1,66 @@
+@import "./better-defaults";
+@import "./typography";
+
+$color-bleak-blue: #8eb4d8; // accent for paragraph-like items
+$color-brighter-bleak-blue: #a2c8e9; // paragraph text
+$color-bright-blue: #00c0ff; // link arrow icon
+$color-pale-green: #006080; // link arrow icon visited
+$color-dark: #041421; // page background color
+$color-darkish-green: #051c30; // header background color
+$color-bright-white: #dff0ff; // link text default state
+$color-nearly-white: #f4effa; // most big headings
+$color-orange: #ffc000; // external link type 1 icon and active state
+$color-pink: #fb00fc; // external link type 2 icon
+$color-pale-pink: #e8dbf4; // small headings
+$color-purple: #8484ff; // link type 2 active state
+
+html {
+  background-color: $color-dark;
+  font-family: Nunito, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $color-bright-white;
+  font-weight: bold;
+  display: block;
+  &:visited {
+    color: $color-purple;
+  }
+  &:hover {
+    color: $color-orange;
+  }
+}
+
+time {
+  font-style: italic;
+  color: $color-bleak-blue;
+}
+
+.central-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.blog-post {
+  &-title {
+    font-size: 2em;
+  }
+  &-content p {
+    padding-left: 1em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 1em 0;
+    color: $color-nearly-white;
+    font-family: Literata, serif;
+  }
+  p {
+    margin: 1em 0;
+    color: $color-brighter-bleak-blue;
+  }
+}
