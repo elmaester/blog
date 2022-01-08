@@ -8,17 +8,22 @@ const IndexPage = ({ data }) => {
     date: node.frontmatter.date,
     title: node.frontmatter.title,
     slug: node.fields.slug,
+    time: node.timeToRead,
   }));
   return (
     <>
-    <Header />
-    <main className="set-global-width">
-      {posts.map((post) => (
-        <Link to={`/${post.slug}`}>
-          {post.date}: {post.title}
-        </Link>
-      ))}
-    </main>
+      <Header />
+      <main className="set-global-width blogroll">
+        {posts.map((post) => (
+          <Link to={`/${post.slug}`} className="blogroll-link">
+            <span className="blogroll-link-date">{post.date}: </span>
+            <span className="blogroll-link-title">
+              {post.title}
+              <span className="blogroll-link-time"> ({post.time} min)</span>
+            </span>
+          </Link>
+        ))}
+      </main>
     </>
   );
 };
@@ -27,7 +32,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           frontmatter {
@@ -37,6 +42,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          timeToRead
         }
       }
     }

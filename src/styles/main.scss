@@ -16,6 +16,7 @@ $color-purple: #8484ff; // link type 2 active state
 
 html {
   background-color: $color-dark;
+  color: $color-brighter-bleak-blue;
   font-family: Nunito, sans-serif;
 }
 
@@ -52,6 +53,27 @@ time {
   margin: 0 auto;
 }
 
+.blogroll {
+  &-link {
+    display: flex;
+    line-height: 1;
+    &:not(:first-of-type) {
+      margin-top: 10px;
+    }
+    &-date {
+      padding-right: 5px;
+      white-space: nowrap;
+      color: $color-nearly-white;
+    }
+    &-time {
+      opacity: 0.85;
+      font-size: 80%;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+  }
+}
+
 .blog-post {
   padding-bottom: 1em;
   &-title {
@@ -73,6 +95,5 @@ time {
   }
   p {
     margin: 1em 0;
-    color: $color-brighter-bleak-blue;
   }
 }
