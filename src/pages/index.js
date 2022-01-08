@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import "../styles/main.scss";
+import Header from "../components/Header";
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
@@ -9,13 +10,16 @@ const IndexPage = ({ data }) => {
     slug: node.fields.slug,
   }));
   return (
-    <main className="central-container">
+    <>
+    <Header />
+    <main className="set-global-width">
       {posts.map((post) => (
         <Link to={`/${post.slug}`}>
           {post.date}: {post.title}
         </Link>
       ))}
     </main>
+    </>
   );
 };
 

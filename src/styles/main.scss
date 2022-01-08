@@ -37,17 +37,29 @@ time {
   color: $color-bleak-blue;
 }
 
-.central-container {
-  max-width: 680px;
+.header {
+  background-color: $color-darkish-green;
+  padding: 1em 0;
+  margin-bottom: 1em;
+  a {
+    color: $color-bleak-blue;
+    font-size: 1.3em;
+  }
+}
+
+.set-global-width {
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .blog-post {
+  padding-bottom: 1em;
   &-title {
     font-size: 2em;
+    margin-top: 0 !important;
   }
   &-content p {
-    padding-left: 1em;
+    padding-left: 20px;
   }
   h1,
   h2,
