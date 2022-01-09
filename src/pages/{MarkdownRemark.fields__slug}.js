@@ -2,11 +2,15 @@ import React from "react";
 import { graphql } from "gatsby";
 import "../styles/main.scss";
 import Header from "../components/Header";
+import { Helmet } from "react-helmet";
 
 export default function Template({ data }) {
   const { frontmatter, html } = data.markdownRemark;
   return (
     <>
+      <Helmet>
+        <title>{frontmatter.title} - {data.site.siteMetadata.title}</title>
+      </Helmet>
       <Header />
       <main className="set-global-width">
         <article className="blog-post">
@@ -32,6 +36,11 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        title
+      }
+    }
+    site {
+      siteMetadata {
         title
       }
     }

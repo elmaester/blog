@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import "../styles/main.scss";
 import Header from "../components/Header";
+import { Helmet } from "react-helmet";
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
@@ -12,6 +13,9 @@ const IndexPage = ({ data }) => {
   }));
   return (
     <>
+      <Helmet>
+        <title>{data.site.siteMetadata.title}</title>
+      </Helmet>
       <Header />
       <main className="set-global-width blogroll">
         {posts.map((post) => (
@@ -44,6 +48,11 @@ export const pageQuery = graphql`
           }
           timeToRead
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }
