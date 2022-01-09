@@ -49,7 +49,7 @@ time {
 }
 
 .set-global-width {
-  @media(max-width: 599px) {
+  @media (max-width: 669px) {
     padding: 0 15px;
   }
   max-width: 700px;
@@ -83,8 +83,26 @@ time {
     font-size: 2em;
     margin-top: 0 !important;
   }
-  &-content p {
-    padding-left: 20px;
+  &-content {
+    p {
+      @media (min-width: 700px) {
+        padding-left: 20px;
+      }
+    }
+    pre {
+      padding: 15px;
+      border: 1px solid $color-bleak-blue;
+      border-radius: 5px;
+      background-color: $color-darkish-green;
+      color: $color-bleak-blue;
+      white-space: pre-wrap;
+      @media (min-width: 700px) {
+        margin-left: 20px;
+      }
+      code {
+        font-family: Iosevka, monospace;
+      }
+    }
   }
   h1,
   h2,

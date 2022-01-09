@@ -1,15 +1,26 @@
 @font-face {
-    font-family: 'Literata';
-    src: url('../fonts/literata.woff2') format('woff2'),
-         url('../fonts/literata.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Literata";
+  font-display: block;
+  src: url("../fonts/literata.woff2") format("woff2"),
+    url("../fonts/literata.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Nunito';
-  src: url('../fonts/nunito.woff2') format('woff2'),
-       url('../fonts/nunito.woff') format('woff');
+  font-family: "Nunito";
+  font-display: block;
+  src: url("../fonts/nunito.woff2") format("woff2"),
+    url("../fonts/nunito.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-display: block;
+  src: url("../fonts/iosevka.woff2") format("woff2"),
+    url("../fonts/iosevka.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
