@@ -26,7 +26,7 @@ export default function Template({ data, location }) {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
-        <Comments commentsId={location.pathname} />
+        <Comments location={location.pathname} />
       </main>
     </>
   );

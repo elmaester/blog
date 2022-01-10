@@ -30,23 +30,17 @@ const removeScript = (id, parentElement) => {
 };
 
 const manageScript = () => {
-  // If there's no window there's nothing to do for us
   if (!window) {
     return;
   }
   const document = window.document;
-  // In case our #remark42 container exists we can add our comments script
   if (document.getElementById("remark42")) {
     insertScript("comments-script", document.body);
   }
-
-  // Cleanup when the component unmounts
   return () => removeScript("comments-script", document.body);
 };
 
-const Comments = ({ commentsId }) => {
-  React.useEffect(manageScript, [commentsId]);
-  React.useEffect(() => {
+const recreateRemark42Instance = () => {
     if (!window) {
       return;
     }
@@ -55,7 +49,12 @@ const Comments = ({ commentsId }) => {
       remark42.destroy();
       remark42.createInstance(window.remark_config);
     }
-  }, [commentsId]);
+    return () => !!remark42 && remark42.destroy();
+}
+
+const Comments = ({ location }) => {
+  React.useEffect(manageScript, [location]);
+  React.useEffect(recreateRemark42Instance, [location]);
 
   return (
     <>
