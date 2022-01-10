@@ -79,6 +79,11 @@ hr {
 
 .blog-post {
   padding-bottom: 1em;
+  a::before {
+    content: url(../images/arrow.png);
+    // filter: invert(51%) sepia(96%) saturate(1212%) hue-rotate(156deg) brightness(99%) contrast(105%);
+    padding-right: 7px;
+  }
   time {
     font-style: italic;
     color: $color-bleak-blue;
