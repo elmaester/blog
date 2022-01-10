@@ -3,13 +3,16 @@ import { graphql } from "gatsby";
 import "../styles/main.scss";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
+import Comments from "../components/Comments";
 
-export default function Template({ data }) {
+export default function Template({ data, location }) {
   const { frontmatter, html } = data.markdownRemark;
   return (
     <>
       <Helmet>
-        <title>{frontmatter.title} - {data.site.siteMetadata.title}</title>
+        <title>
+          {frontmatter.title} - {data.site.siteMetadata.title}
+        </title>
       </Helmet>
       <Header />
       <main className="set-global-width">
@@ -23,6 +26,7 @@ export default function Template({ data }) {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
+        <Comments commentsId={location.pathname} />
       </main>
     </>
   );
