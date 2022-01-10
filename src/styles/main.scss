@@ -33,6 +33,10 @@ a {
   }
 }
 
+hr {
+  border: 1px solid $color-brighter-bleak-blue;
+}
+
 .header {
   background-color: $color-darkish-green;
   padding: 1em 0;
@@ -52,6 +56,7 @@ a {
 }
 
 .blogroll {
+  padding-bottom: 3em;
   &-link {
     display: flex;
     line-height: 1;
@@ -86,6 +91,20 @@ a {
     p {
       @media (min-width: 700px) {
         padding-left: 20px;
+      }
+    }
+    blockquote {
+      border: 1px solid $color-bleak-blue;
+      border-radius: 5px;
+      background-color: $color-darkish-green;
+      color: $color-bleak-blue;
+      p {
+        font-family: Iosevka, monospace;
+        margin: 0;
+        padding: 10px 20px;
+        @media (max-width: 669px) {
+          padding: 10px;
+        }
       }
     }
     pre {
