@@ -33,11 +33,6 @@ a {
   }
 }
 
-time {
-  font-style: italic;
-  color: $color-bleak-blue;
-}
-
 .header {
   background-color: $color-darkish-green;
   padding: 1em 0;
@@ -79,6 +74,10 @@ time {
 
 .blog-post {
   padding-bottom: 1em;
+  time {
+    font-style: italic;
+    color: $color-bleak-blue;
+  }
   &-title {
     font-size: 2em;
     margin-top: 0 !important;

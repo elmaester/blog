@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
       <main className="set-global-width blogroll">
         {posts.map((post) => (
           <Link to={`/${post.slug}`} className="blogroll-link">
-            <span className="blogroll-link-date">{post.date}: </span>
+            <time className="blogroll-link-date">{post.date}: </time>
             <span className="blogroll-link-title">
               {post.title}
               <span className="blogroll-link-time"> ({post.time} min)</span>
