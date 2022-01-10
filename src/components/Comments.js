@@ -49,7 +49,6 @@ const recreateRemark42Instance = () => {
       remark42.destroy();
       remark42.createInstance(window.remark_config);
     }
-    return () => !!remark42 && remark42.destroy();
 }
 
 const Comments = ({ location }) => {
