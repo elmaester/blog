@@ -4,9 +4,11 @@ import "../styles/main.scss";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
 import Comments from "../components/Comments";
+import PrevNextLink from "../components/PrevNextLink";
 
-export default function Template({ data, location }) {
+export default function BlogPost({ data, location, pageContext }) {
   const { frontmatter, html } = data.markdownRemark;
+  const { prev, next } = pageContext;
   return (
     <>
       <Helmet>
@@ -26,6 +28,10 @@ export default function Template({ data, location }) {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
+        <footer className="blog-post-prevnext">
+          <PrevNextLink prevOrNext={"Previous"} obj={prev} />
+          <PrevNextLink prevOrNext={"Next"} obj={next} />
+        </footer>
         <Comments location={location.pathname} />
       </main>
     </>
@@ -35,8 +41,8 @@ export default function Template({ data, location }) {
 // FrontMatter: title, date, tags, related
 
 export const pageQuery = graphql`
-  query ($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query ($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
