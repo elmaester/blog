@@ -41,13 +41,14 @@ hr {
   background-color: $color-darkish-green;
   padding: 1em 0;
   margin-bottom: 1em;
-  &-homepage-link {
+  a.header-homepage-link {
     color: $color-bleak-blue;
     font-size: 1.3em;
   }
   &-inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -100,7 +101,7 @@ hr {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 2em;
-    div+div {
+    div + div {
       text-align: right;
     }
   }
