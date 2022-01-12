@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
       <Header />
       <main className="set-global-width blogroll">
         {posts.map((post) => (
-          <Link to={`/${post.slug}`} className="blogroll-link">
+          <Link to={`/${post.slug}`} className="blogroll-link" key={post.slug}>
             <time className="blogroll-link-date">{post.date}: </time>
             <span className="blogroll-link-title">
               {post.title}

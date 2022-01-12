@@ -1,3 +1,5 @@
+const rssOptions = require("./rss-feed-options");
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://blog.oleg.date",
@@ -14,6 +16,7 @@ module.exports = {
       },
     },
     "gatsby-transformer-remark",
+    { resolve: "gatsby-plugin-feed", options: rssOptions },
     {
       resolve: "gatsby-source-filesystem",
       options: {

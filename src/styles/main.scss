@@ -41,9 +41,13 @@ hr {
   background-color: $color-darkish-green;
   padding: 1em 0;
   margin-bottom: 1em;
-  a {
+  &-homepage-link {
     color: $color-bleak-blue;
     font-size: 1.3em;
+  }
+  &-inner {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
