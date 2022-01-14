@@ -65,8 +65,20 @@ hr {
   margin: 0 auto;
 }
 
+.total-time-to-read {
+  font-size: 80%;
+  text-align: center;
+  opacity: 0.85;
+  span {
+    white-space: nowrap;
+  }
+}
+
 .blogroll {
-  margin-top: 1.5em;
+  @media(max-width: 599px) {
+    font-size: 85%;
+  }
+  margin-top: 1em;
   padding-bottom: 3em;
   &-link {
     display: flex;
