@@ -4,6 +4,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://blog.oleg.date",
     title: "Oleg.Date Blog",
+    description: "Oleg's personal blog about philosophy and life experiences. Come and explore!",
   },
   plugins: [
     "gatsby-plugin-sass",

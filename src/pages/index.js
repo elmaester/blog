@@ -4,6 +4,7 @@ import "../styles/main.scss";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
 import { getTotalTimeToReadString } from "../functions";
+import SlowlyAvatar from "../images/slowly.png"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
@@ -18,6 +19,15 @@ const IndexPage = ({ data }) => {
     <>
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
+        <meta name="description" content={data.site.siteMetadata.description} />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={data.site.siteMetadata.title}/>
+        <meta property="og:description" content={data.site.siteMetadata.description} />
+        <meta property="og:url" content={data.site.siteMetadata.siteUrl} />
+        <meta property="og:site_name" content={data.site.siteMetadata.title} />
+        <meta property="og:image" content={SlowlyAvatar}/>
       </Helmet>
       <Header />
       <main className="set-global-width blogroll">
@@ -60,6 +70,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
+        siteUrl
       }
     }
   }
