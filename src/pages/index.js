@@ -4,7 +4,7 @@ import "../styles/main.scss";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
 import { getTotalTimeToReadString } from "../functions";
-import SlowlyAvatar from "../images/slowly.png"
+import SlowlyAvatar from "../images/slowly.png";
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
@@ -17,19 +17,29 @@ const IndexPage = ({ data }) => {
   const totalTimeString = getTotalTimeToReadString(totalTime, posts.length);
   return (
     <>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: "en",
+        }}
+      >
         <title>{data.site.siteMetadata.title}</title>
         <meta name="description" content={data.site.siteMetadata.description} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="google-site-verification" content="bbrKWw5sI39u-BzDyEKTUwX73_9acZAUMGNX7waYKKI" />
+        <meta
+          name="google-site-verification"
+          content="bbrKWw5sI39u-BzDyEKTUwX73_9acZAUMGNX7waYKKI"
+        />
         <meta name="yandex-verification" content="75fa6cf7dad7c161" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={data.site.siteMetadata.title}/>
-        <meta property="og:description" content={data.site.siteMetadata.description} />
+        <meta property="og:title" content={data.site.siteMetadata.title} />
+        <meta
+          property="og:description"
+          content={data.site.siteMetadata.description}
+        />
         <meta property="og:url" content={data.site.siteMetadata.siteUrl} />
         <meta property="og:site_name" content={data.site.siteMetadata.title} />
-        <meta property="og:image" content={SlowlyAvatar}/>
+        <meta property="og:image" content={SlowlyAvatar} />
       </Helmet>
       <Header />
       <main className="set-global-width blogroll">
