@@ -23,6 +23,7 @@ const IndexPage = ({ data }) => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta name="google-site-verification" content="bbrKWw5sI39u-BzDyEKTUwX73_9acZAUMGNX7waYKKI" />
+        <meta name="yandex-verification" content="75fa6cf7dad7c161" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={data.site.siteMetadata.title}/>
         <meta property="og:description" content={data.site.siteMetadata.description} />
