@@ -21,10 +21,10 @@ const Header = () => {
           {data.site.siteMetadata.title}
         </Link>
         <a href="https://t.me/+ExSBktJktPU5NzQy" className="header-first-icon">
-          <img src={TelegramLogo} alt="telegram" />
+          <img src={TelegramLogo} alt="telegram" width="36" height="36" />
         </a>
         <a href="/rss.xml">
-          <img src={RssLogo} alt="rss" />
+          <img src={RssLogo} alt="rss" width="36" height="36" />
         </a>
       </div>
     </header>
