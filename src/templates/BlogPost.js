@@ -21,7 +21,6 @@ export default function BlogPost({ data, location, pageContext }) {
           {frontmatter.title} - {data.site.siteMetadata.title}
         </title>
         <meta name="description" content={excerpt} />
-        <meta name="robots" content="index, nofollow" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content={frontmatter.date} />

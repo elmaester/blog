@@ -23,7 +23,7 @@ const Header = () => {
         <a href="https://t.me/+ExSBktJktPU5NzQy" className="header-first-icon">
           <img src={TelegramLogo} alt="telegram" width="36" height="36" />
         </a>
-        <a href="/rss.xml">
+        <a href="/rss">
           <img src={RssLogo} alt="rss" width="36" height="36" />
         </a>
       </div>

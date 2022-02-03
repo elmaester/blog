@@ -35,5 +35,13 @@ module.exports = {
       },
       __key: "markdown-pages",
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://blog.oleg.date',
+        sitemap: 'https://blog.oleg.date/sitemap/sitemap-0.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    },
   ],
 };
