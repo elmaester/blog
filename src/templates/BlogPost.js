@@ -10,6 +10,7 @@ import SlowlyAvatar from "../images/slowly.png";
 export default function BlogPost({ data, location, pageContext }) {
   const { frontmatter, html, excerpt } = data.markdownRemark;
   const { prev, next, slug } = pageContext;
+  const url = data.site.siteMetadata.siteUrl + "/" + slug;
   return (
     <>
       <Helmet
@@ -20,16 +21,14 @@ export default function BlogPost({ data, location, pageContext }) {
         <title>
           {frontmatter.title} - {data.site.siteMetadata.title}
         </title>
+        <link rel="canonical" href={url} />
         <meta name="description" content={excerpt} />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content={frontmatter.date} />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={excerpt} />
-        <meta
-          property="og:url"
-          content={data.site.siteMetadata.siteUrl + "/" + slug}
-        />
+        <meta property="og:url" content={url} />
         <meta property="og:site_name" content={data.site.siteMetadata.title} />
         <meta property="og:image" content={SlowlyAvatar} />
       </Helmet>

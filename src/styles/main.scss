@@ -171,3 +171,23 @@ hr {
     margin: 1em 0;
   }
 }
+
+.privacy {
+  padding-bottom: 2em;
+  a {
+    display: inline;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.5em 0;
+    color: $color-nearly-white;
+    font-family: Literata, serif;
+  }
+  p {
+    margin: 0.3em 0;
+  }
+}
