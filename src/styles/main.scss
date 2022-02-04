@@ -51,9 +51,11 @@ hr {
     display: flex;
     align-items: center;
   }
-  &-first-icon {
-    margin-left: auto;
-    margin-right: 5px;
+  &-social-link {
+    margin-left: 5px;
+    &-first {
+      margin-left: auto;
+    }
   }
 }
 
