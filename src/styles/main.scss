@@ -117,7 +117,7 @@ hr {
   &-prevnext {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 2em;
+    padding-bottom: 3.5em;
     div + div {
       text-align: right;
     }

@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import "../styles/main.scss";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
-import Comments from "../components/Comments";
 import PrevNextLink from "../components/PrevNextLink";
 import SlowlyAvatar from "../images/slowly.png";
 
@@ -48,7 +47,6 @@ export default function BlogPost({ data, location, pageContext }) {
           <PrevNextLink prevOrNext={"Previous"} obj={prev} />
           <PrevNextLink prevOrNext={"Next"} obj={next} />
         </footer>
-        <Comments location={location.pathname} />
       </main>
     </>
   );
