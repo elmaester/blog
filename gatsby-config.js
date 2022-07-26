@@ -19,15 +19,6 @@ module.exports = {
     "gatsby-transformer-remark",
     { resolve: "gatsby-plugin-feed", options: rssOptions },
     {
-      resolve: 'gatsby-plugin-matomo',
-      options: {
-        siteId: 1,
-        matomoUrl: 'https://eye.oleg.date',
-        siteUrl: 'https://blog.oleg.date',
-        respectDnt: false
-      }
-    },
-    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "markdown-pages",
