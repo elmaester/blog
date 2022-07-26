@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import RssLogo from "../images/rss.png";
 import TelegramLogo from "../images/telegram.png";
 import TwitterLogo from "../images/twitter.png";
-import EmailLogo from "../images/email.png";
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -22,10 +21,7 @@ const Header = () => {
         <Link to="/" className="header-homepage-link">
           {data.site.siteMetadata.title}
         </Link>
-        <a href="https://list.oleg.date/subscription/form" className="header-social-link-first">
-          <img src={EmailLogo} alt="email" width="36" height="36" />
-        </a>
-        <a href="https://twitter.com/oleg_date" className="header-social-link">
+        <a href="https://twitter.com/oleg_date" className="header-social-link-first">
           <img src={TwitterLogo} alt="twitter" width="36" height="36" />
         </a>
         <a href="https://t.me/+ExSBktJktPU5NzQy" className="header-social-link">
