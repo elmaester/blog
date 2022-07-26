@@ -13,6 +13,21 @@ const IndexPage = ({ data }) => {
     slug: node.fields.slug,
     time: node.timeToRead,
   }));
+  const postsSorted = (() => {
+    const output = {};
+    posts.forEach((post) => {
+      const year = post.date.substring(0, 4);
+      const month = new Intl.DateTimeFormat("en-US", { month: "long" }).format(
+        new Date(post.date)
+      );
+      const day = post.date.substring(8, 10);
+      if (!output[year]) output[year] = {};
+      if (!output[year][post.date.substring(5, 7) + month])
+        output[year][post.date.substring(5, 7) + month] = {};
+      output[year][post.date.substring(5, 7) + month][day] = post;
+    });
+    return output;
+  })();
   const totalTime = posts.map((p) => p.time).reduce((acc, cur) => acc + cur);
   const totalTimeString = getTotalTimeToReadString(totalTime, posts.length);
   return (
@@ -47,15 +62,42 @@ const IndexPage = ({ data }) => {
           {totalTimeString.intro}
           <span>{totalTimeString.value}</span>
         </p>
-        {posts.map((post) => (
-          <Link to={`/${post.slug}`} className="blogroll-link" key={post.slug}>
-            <time className="blogroll-link-date">{post.date}: </time>
-            <span className="blogroll-link-title">
-              {post.title}
-              <span className="blogroll-link-time"> ({post.time} min)</span>
-            </span>
-          </Link>
-        ))}
+        {Object.entries(postsSorted)
+          .reverse()
+          .map(([year, month]) => (
+            <>
+              <h2 className="blogroll-year" key={year}>{year}</h2>
+              {Object.entries(month)
+                .sort((a, b) => (parseInt(a[0]) > parseInt(b[0]) ? -1 : 1))
+                .map(([monthName, _post]) => {
+                  return (
+                    <>
+                      <h3 className="blogroll-month" key={monthName}>{monthName.substring(2)}</h3>
+                      {Object.values(_post)
+                        .sort((a, b) => (a.date > b.date ? -1 : 1))
+                        .map((post) => (
+                          <Link
+                            to={`/${post.slug}`}
+                            className="blogroll-link"
+                            key={post.slug}
+                          >
+                            <time className="blogroll-link-date">
+                              {post.date.substring(8, 10)}
+                            </time>
+                            <span className="blogroll-link-title">
+                              {post.title}
+                              <span className="blogroll-link-time">
+                                {" "}
+                                ({post.time} min)
+                              </span>
+                            </span>
+                          </Link>
+                        ))}
+                    </>
+                  );
+                })}
+            </>
+          ))}
       </main>
     </>
   );

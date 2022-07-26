@@ -77,8 +77,16 @@ hr {
 }
 
 .blogroll {
-  @media(max-width: 599px) {
+  @media (max-width: 599px) {
     font-size: 85%;
+  }
+  &-year {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 1.8em;
+  }
+  &-month {
+    margin: 20px 0;
   }
   margin-top: 1em;
   padding-bottom: 3em;
@@ -87,6 +95,7 @@ hr {
     line-height: 1;
     margin-top: 10px;
     &-date {
+      margin-right: 25px;
       padding-right: 5px;
       white-space: nowrap;
       color: $color-nearly-white;
